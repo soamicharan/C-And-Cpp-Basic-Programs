@@ -1,0 +1,198 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    float r,c,i,f,ir,cr,zlr,zrc,zlc,zlcr,t,pd,a,v,z,ir1,cr1;
+    int in,m;
+    printf("Press 1 for default equation or Press 2 for Custom Equations - ");
+    scanf("%d",&m);
+    if(m==1)
+    {
+    printf("Put unknown value to 0.\n");
+    printf("Enter Ampere of Current(value of RMS and in Ampere) - ");
+    scanf("%f",&a);
+    printf("Enter Voltage of Circuit(In Volt). - ");
+    scanf("%f",&v);
+    printf("Enter frequency of A.C. Current - ");
+    scanf("%f",&f);
+    printf("Enter Resistance(in ohms) - ");
+    scanf("%f",&r);
+    printf("Enter Capacitance(in MicroFarads) - ");
+    scanf("%f",&c);
+    printf("Enter Inductance(in henry) - ");
+    scanf("%f",&i);
+    printf("Enter Inductance Reactance - ");
+    scanf("%f",&ir1);
+    printf("Enter Capactiance Reactance - ");
+    scanf("%f",&cr1);
+    c=c*pow(10,-6);
+    ir=2*3.14*f*i;
+    cr=1/(2*3.14*f*c);
+    printf("Enter following to get answer-\n1-Series L-R Circuit.\n2-Series R-C Circuit.\n3-Series L-C Circuit.\n4-Series L-C-R Circuit.\n");
+    scanf("%d",&in);
+    switch(in)
+    {
+    case (1) : t=r*r+ir*ir;
+              z=sqrt(t);
+              pd=ir/r;
+              if(a==0)
+              { a=v/z; }
+              if(v==0)
+              { v=a*z; }
+              printf("Reactance - %f ohm\nPhase Difference - %f\nCurrent - %fA\nVoltage - %fV\n",z,pd,a,v);
+              if(f==0&&ir1==0||cr1==0)
+              { f=ir/(2*3.14*c);
+              printf("Frequency - %f",f);}
+              break;
+    case (2) : t=r*r+cr*cr;
+              z=sqrt(t);
+              pd=(-cr)/r;
+              if(a==0)
+              { a=v/z; }
+              if(v==0)
+              { v=a*z; }
+              printf("Reactance - %f ohm\nPhase Difference - %f\nCurrent - %fA\nVoltage - %fV\n",z,pd,a,v);
+               if(f==0&&ir1==0||cr1==0)
+              { f=ir/(2*3.14*c);
+              printf("Frequency - %f",f);}
+              break;
+    case (3) : z=ir-cr;
+              pd=z/0;
+              if(a==0)
+              { a=v/z; }
+              if(v==0)
+              { v=a*z; }
+              printf("Reactance - %f ohm\nPhase Difference - %f\nCurrent - %fA\nVoltage - %fV\n",z,pd,a,v);
+               if(f==0&&ir1==0||cr1==0)
+              { f=ir/(2*3.14*c);
+              printf("Frequency - %f",f);}
+              break;
+    case (4) : t=r*r+(ir-cr)*(ir-cr);
+              z=sqrt(t);
+              pd=(ir-cr)/r;
+              if(a==0)
+              {a=v/z;}
+              if(v==0)
+              { v=a*z; }
+              printf("Reactance - %f ohm\nPhase Difference - %f\nCurrent - %fA\nVoltage - %fV\n",z,pd,a,v);
+               if(f==0&&ir1==0||cr1==0)
+              { f=ir/(2*3.14*c);
+              printf("Frequency - %f",f);}
+              break;
+        }
+    }
+    if(m==2)
+    {
+        printf("Put unknown value to 0.\n");
+    printf("Enter Ampere of Current(value of RMS and in Ampere) - ");
+    scanf("%f",&a);
+    printf("Enter Voltage of Circuit(In Volt). - ");
+    scanf("%f",&v);
+    printf("Enter frequency of A.C. Current - ");
+    scanf("%f",&f);
+    printf("Enter Resistance(in ohms) - ");
+    scanf("%f",&r);
+    printf("Enter Capacitance reactance - ");
+    scanf("%f",&cr);
+    printf("Enter Inductance Reactance - ");
+    scanf("%f",&ir);
+    printf("Enter Reactance(in Ohms) - ");
+    scanf("%f",&z);
+    printf("Enter following to get answer-\n1-Series L-R Circuit.\n2-Series R-C Circuit.\n3-Series L-C Circuit.\n4-Series L-C-R Circuit.\n");
+    scanf("%d",&in);
+
+    switch(in)
+    {
+    case (1):if(r==0)
+    {
+        t=(z*z)-(ir*ir);
+        r=sqrt(t);
+        printf("Resistance -%f \n",r);
+    }
+    if(ir==0)
+    {
+        t=z*z-r*r;
+        ir=sqrt(t);
+        i=ir/(2*3.14*f);
+        printf("Inductance Reactance - %f\nInductance - %f",ir,i);
+    }
+    if(a==0)
+              {
+                   a=v/z;
+               }
+              if(v==0)
+              {
+                  v=a*z;
+              }
+              printf("Current - %fA\nVoltage - %fV\n",a,v);
+              break;
+    case (2):if(r==0)
+    {
+        t=z*z-cr*cr;
+        r=sqrt(t);
+        printf("Resistance - %f\n",r);
+    }
+    else if(cr==0)
+    {
+        t=z*z-r*r;
+        cr=sqrt(t);
+        c=1/(2*3.14*f*cr)*pow(10,-6);
+        printf("Capacitance Reactance - %f\nCapacitance(in Micro farad) - %f\n",cr,c);
+    }
+    else if(a==0)
+              { a=v/z; }
+              if(v==0)
+              { v=a*z; }
+              printf("Current - %fA\nVoltage - %fV\n",a,v);
+               break;
+    case(3):if(ir==0)
+    {
+        ir=z+cr;
+         i=ir/(2*3.14*f);
+        printf("Inductive Reactance - %f\nInductance - %f\n",ir,i);
+    }
+    if(cr==0)
+    {
+        cr=ir-z;
+         c=1/(2*3.14*f*cr)*pow(10,-6);
+        printf("Capacitance Reactance - %f\nCapacitance(in Micro farad) - %f\n",cr,c);
+    }
+    if(a==0)
+              { a=v/z; }
+              if(v==0)
+              {
+                   v=a*z;
+              }
+              printf("Current - %fA\nVoltage - %fV\n",a,v);
+               break;
+    case(4):if(r==0)
+    {
+        t=z*z-(ir-cr)*(ir-cr);
+        r=sqrt(t);
+        printf("Resistance - %f\n",r);
+    }
+    if(ir==0)
+    {
+        t=z*z-r*r;
+        ir=sqrt(t)+cr;
+         i=ir/(2*3.14*f);
+        printf("Inductance Reactance - %f\nInductance - %f\n",ir,i);
+    }
+    if(cr==0)
+    {
+        t=z*z-r*r;
+        cr=ir-sqrt(t);
+        c=1/(2*3.14*f*cr)*pow(10,-6);
+        printf("Capacitance Reactance - %f\nCapacitance(in Micro farad) - %f\n",cr,c);
+    }
+    if(a==0)
+              { a=v/z; }
+              if(v==0)
+              { v=a*z; }
+              printf("Current - %fA\nVoltage - %fV\n",a,v);
+               break;
+    }
+
+    }
+    getch();
+}
