@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int a,b,c,d,e,f,g,h,i;
+    char x,y;
+    printf("Enter number of rows. Don't enter more than 26:");
+    scanf("%d",&a);
+    f=a;
+    h=a;
+    i=h-1;
+    g=a-1;
+    for(b=0;b<=a;b++)
+    {
+        x='A';
+
+        for(c=1;c<=f;c++)
+        {
+            printf("%c",x);
+            x++;
+        }
+        for(d=1;d<=2*b-1;d++)
+        {
+          if(b==0)
+            {
+                continue;
+            }
+            else
+            {
+                printf(" ");
+            }
+
+        }
+       if(b==0)
+        {
+            y=x-2;
+            h=i;
+
+        }
+        else
+        {
+            y=x-1;
+            h=f;
+        }
+        for(e=1;e<=h;e++)
+        {
+            printf("%c",y);
+            y--;
+        }
+        f=f-1;
+        h=h-1;
+        printf("\n");
+    }
+    getch();
+
+}
+
