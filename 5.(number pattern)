@@ -1,0 +1,109 @@
+#include <stdio.h>
+#include<conio.h>
+int main()
+{
+    int i, j,k,l,n=0,p,N,m,f;
+
+    printf("Enter number of rows: ");
+    scanf("%d", &N);
+    k=N;
+    p=N-8;
+    for(i=1; i<=N; i++)
+    {
+                 m=i-1;
+        //Logic to print numbers
+        for(j=1; j<=k; j++)
+        {
+            if(N>=10)
+               {
+                   if(i>=p)
+                   {
+                       continue;
+                   }
+                   else
+                   {
+                        printf("%d", j);
+
+                   }
+               }
+               if(N<=9)
+               {
+                   printf("%d", j);
+               }
+
+
+
+
+        }
+       for(n=1;n<=2*m-1;n++)
+        {
+            if(N>=10)
+            {
+            if(i==1)
+            {
+                continue;
+                }
+                if(i<p)
+                {
+                    printf("  ");
+                }
+
+               else
+               {
+                   continue;
+               }
+            }
+            if(N<10)
+            {
+              if(i==1)
+            {
+                continue;
+                }
+                else
+                {
+                    printf(" ");
+                }
+            }
+
+        }
+
+        if(i==1)
+           {
+             f=k-1;
+           }
+           else
+           {
+                f=k;
+           }
+
+
+        for(l=f;l>=1;l--)
+        {
+               if(N>=10)
+               {
+                   if(i>=p)
+                   {
+                       continue;
+                   }
+                   else
+                   {
+                        printf("%d", l);
+
+                   }
+               }
+               if(N<=9)
+               {
+                   printf("%d", l);
+               }
+
+        }
+
+
+      printf("\n");
+        k=k-1;
+}
+getch();
+    }
+
+
+
