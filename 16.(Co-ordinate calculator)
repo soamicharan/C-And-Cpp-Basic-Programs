@@ -1,0 +1,173 @@
+#include<iostream>
+#include<conio.h>
+#include<math.h>
+using namespace std;
+int dis();
+int clin();
+int area();
+int mid();
+int sec();
+int cent();
+int main()
+{
+    int a,b;
+    cout<<"1-Determine Distance between two points.\n2-Check weather given three points are co-linear.\n3-Determine area of triangle from given three points.\n4-Determine mid point of joining two points line segment.\n4-Determine Section formulas.\n6-Determine centroid of triangle\n";
+    cin>>a;
+    switch(a)
+    {
+        case 1: dis();
+        break;
+        case 2: clin();
+        break;
+        case 3: area();
+        break;
+        case 4: mid();
+        break;
+        case 5: sec();
+        break;
+        case 6: cent();
+        break;
+        default: cout<<"Wrong Input. Please try again.";
+    }
+    getch();
+}
+int dis()
+{
+    float x1,y1,x2,y2,tem,dis;
+    cout<<"Enter X - co-ordinates and Y - co-ordinates of first point."<<endl;
+    cout<<"X1 - ";
+    cin>>x1;
+    cout<<"Y1 - ";
+    cin>>y1;
+    cout<<"Enter X - co-ordinates and Y - co-ordinates of second point."<<endl;
+    cout<<"X2 - ";
+    cin>>x2;
+    cout<<"Y2 - "                                ;
+    cin>>y2;
+    tem=(x1-x2)*(x1-x2)+(y1-y2)*(y1-y2);
+    dis=sqrt(tem);
+    cout<<"Answer = "<<dis<<endl;
+}
+int clin()
+{
+    float x1,y1,x2,y2,x3,y3,clin;
+     cout<<"Enter X - co-ordinates and Y - co-ordinates of first point."<<endl;
+    cout<<"X1 - ";
+    cin>>x1;
+    cout<<"Y1 - ";
+    cin>>y1;
+    cout<<"Enter X - co-ordinates and Y - co-ordinates of second point."<<endl;
+    cout<<"X2 - ";
+    cin>>x2;
+    cout<<"Y2 - ";
+    cin>>y2;
+     cout<<"Enter X - co-ordinates and Y - co-ordinates of third point."<<endl;
+    cout<<"X3 - ";
+    cin>>x3;
+    cout<<"Y3 - ";
+    cin>>y3;
+    clin=x1*(y2-y3)+x2*(y3-y1)+x3*(y1-y2);
+    if(clin==0)
+    cout<<"Given three points are co-linear."<<endl;
+    else
+        cout<<"Given three points are not in co-linear."<<endl;
+}
+int area()
+{
+    float x1,y1,x2,y2,x3,y3,tem,area;
+     cout<<"Enter X - co-ordinates and Y - co-ordinates of first point."<<endl;
+    cout<<"X1 - ";
+    cin>>x1;
+    cout<<"Y1 - ";
+    cin>>y1;
+    cout<<"Enter X - co-ordinates and Y - co-ordinates of second point."<<endl;
+    cout<<"X2 - ";
+    cin>>x2;
+    cout<<"Y2 - ";
+    cin>>y2;
+     cout<<"Enter X - co-ordinates and Y - co-ordinates of third point."<<endl;
+    cout<<"X3 - ";
+    cin>>x3;
+    cout<<"Y3 - ";
+    cin>>y3;
+    tem=x1*(y2-y3)+x2*(y3-y1)+x3*(y1-y2);
+    area=tem/2;
+    cout<<"Answer = "<<endl;
+}
+int sec()
+{
+    float x1,y1,x2,y2,x3,y3,r1,r2,c;
+    cout<<"Enter X - co-ordinates and Y - co-ordinates of first point."<<endl;
+    cout<<"X1 - ";
+    cin>>x1;
+    cout<<"Y1 - ";
+    cin>>y1;
+    cout<<"Enter X - co-ordinates and Y - co-ordinates of second point."<<endl;
+    cout<<"X2 - ";
+    cin>>x2;
+    cout<<"Y2 - ";
+    cin>>y2;
+    cout<<"Enter ratio which point divides the line segment."<<endl;
+    cout<"Enter first ratio - ";
+    cin>>r1;
+    cout<<"Enter second ratio - ";
+    cin>>r2;
+    cout<<"Press 1 For internal Division.\nPress 2 For external division."<<endl;
+    cin>>c;
+    if(c==1)
+    x3=(r1*x2+r2*x1)/(r1+r2);
+    y3=(r1*y2+r2*y1)/(r1+r2);
+    cout<<"The X - co-ordinate of  point = "<<x3<<endl;
+    cout<<"The Y - co-ordinate of point = "<<y3<<endl;
+    if(c==2)
+         x3=(r1*x2-r2*x1)/(r1-r2);
+    y3=(r1*y2-r2*y1)/(r1-r2);
+    cout<<"The X - co-ordinate of  point = "<<x3<<endl;
+    cout<<"The Y - co-ordinate of  point = "<<y3<<endl;
+}
+int mid()
+{
+    float x1,y1,x2,y2,x3,y3,r1,r2;
+    cout<<"Enter X - co-ordinates and Y - co-ordinates of first point."<<endl;
+    cout<<"X1 - ";
+    cin>>x1;
+    cout<<"Y1 - ";
+    cin>>y1;
+    cout<<"Enter X - co-ordinates and Y - co-ordinates of second point."<<endl;
+    cout<<"X2 - ";
+    cin>>x2;
+    cout<<"Y2 - "<<endl;
+    cin>>y2;
+    cout<<"Enter ratio which point divides the line segment."<<endl;
+    cout<"Enter first ratio - ";
+    cin>>r1;
+    cout<<"Enter second ratio - ";
+    cin>>r2;
+    x3=(x1+x2)/2;
+    y3=(y1+y2)/2;
+     cout<<"The X - co-ordinate of mid point = "<<x3;
+    cout<<"The Y - co-ordinate of mid point = "<<y3;
+}
+int cent()
+{
+     float x1,y1,x2,y2,x3,y3,x4,y4;
+     cout<<"Enter X - co-ordinates and Y - co-ordinates of first point."<<endl;
+    cout<<"X1 - ";
+    cin>>x1;
+    cout<<"Y1 - ";
+    cin>>y1;
+    cout<<"Enter X - co-ordinates and Y - co-ordinates of second point.";
+    cout<<"X2 - ";
+    cin>>x2;
+    cout<<"Y2 - ";
+    cin>>y2;
+     cout<<"Enter X - co-ordinates and Y - co-ordinates of third point.";
+    cout<<"X3 - ";
+    cin>>x3;
+    cout<<"Y3 - ";
+    cin>>y3;
+    x4=(x1+x2+x3)/3;
+    y4=(y1+y2+y3)/3;
+    cout<<"The X - co-ordinate of centroid point = "<<x4<<endl;
+    cout<<"The Y - co-ordinate of centroid point = "<<y4<<endl;
+}
