@@ -1,0 +1,139 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int main()
+{
+    int a,b,c=21,d,e,f,g=0,h,i=0,j,k,l,m,n,o,p,q;
+    cout<<"\nThere are 21 sticks. You can pick 1,2,3 or 4 stick and Computer will pick the sticks. Who has choice to pick the last one stick, he LOSE.\n";
+     for(b=1;b<=c;b++)
+        {
+            cout<<"| ";
+        }
+    for(a=0;a<=21;a++)
+    {
+
+        cout<<"\n\nYour Turn.\nPick 1,2,3 or 4 sticks.\n";
+        cin>>d;
+        if(d==1)
+        {
+              h=c-1;
+        }
+
+            if(d==2)
+            {
+                h=c-2;
+            }
+
+            if(d==3)
+            {
+                 h=c-3;
+            }
+
+            if(d==4)
+            {
+               h=c-4;
+            }
+        for(i=1;i<=h;i++)
+        {
+            cout<<"| ";
+        }
+        cout<<"\nYou picked "<<d<<" sticks.\n";
+        cout<<"\n\nComputer Turn";
+        for(e=1;e<=4;e++)
+        {
+            f=h-e;
+
+            if(f==18)
+            {
+                g=f;
+                cout<<"\nComputer picks "<<e<<" sticks\n";
+                break;
+            }
+            if(f==14)
+            {
+                 g=f;
+                cout<<"\nComputer picks "<<e<<" sticks\n";
+            }
+            if(f==10)
+            {
+                 g=f;
+                 if(h==11)
+                    continue;
+                    else
+                cout<<"\nComputer picks "<<e<<" sticks\n";
+
+            }
+            if(f==6)
+            {
+                 g=f;
+                cout<<"\nComputer picks "<<e<<" sticks\n";
+
+            }
+            if(h==11)
+            {
+                g=h-2;
+                cout<<"\nComputer picks 2 sticks\n";
+                break;
+            }
+            if(h==6)
+            {
+                g=h-4;
+                cout<<"\nComputer picks 4 sticks\n";
+                break;
+            }
+            if(h<6)
+            {
+            if(h==5)
+            {
+                g=h-4;
+                 cout<<"\nComputer picks 4 sticks\n";
+                 break;
+            }
+
+            if(h==4)
+            {
+                g=h-3;
+                 cout<<"\nComputer picks 3 sticks\n";
+                 break;
+            }
+            if(h==3)
+            {
+                g=h-2;
+                 cout<<"\nComputer picks 2 sticks\n";
+                 break;
+            }
+            if(h==2)
+            {
+                g=h-1;
+                 cout<<"\nComputer picks 1 sticks\n";
+                 break;
+            }
+            if(h==1)
+            {
+                cout<<"\nComputer LOSE ####\n";
+                g=h;
+                break;
+            }
+            break;
+            }
+        }
+
+        for(b=1;b<=g;b++)
+        {
+            cout<<"| ";
+            if(h==1)
+            {
+                return 0;
+            }
+        }
+        c=g;
+        if(c==1&&h!=1)
+        {
+
+            cout<<"\nYour Turn.\nOnly one stick remain.\nYou LOSE\nComputer WINS!!!!!!\n"<<endl;
+            getch();
+            return 0;
+        }
+    }
+
+}
