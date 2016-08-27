@@ -1,0 +1,22 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+int f=0;
+float add[100],h=0;
+string command;
+int main()
+{
+    if(f==0)
+    cout<<"Enter numbers"<<endl;
+
+        cin>>add[f]>>command;
+
+        if(command=="+")
+        {
+            h=h+add[f];
+            f++;
+           cout<<"Answer = "<<h<<endl;
+           return main();
+        }
+getch();
+}
