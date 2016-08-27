@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int a,i,j,k,l=1,m,n,o=2;
+    printf("Enter number of rows:");
+    scanf("%d",&a);
+    m=a-1;
+    n=a;
+
+    for(i=1;i<=a;i++)
+   {
+        for(j=1;j<=m;j++)
+        {
+            printf(" ",j);
+        }
+        for(k=1;k<=l;k++)
+       {
+            printf("* ", k);
+        }
+        l=l+1;
+        m=m-1;
+        printf("\n");
+    }
+    n=n-1;
+    for(i=1;i<=a;i++)
+   {
+
+
+        for(j=1;j<o;j++)
+        {
+            printf(" ",j);
+        }
+        for(k=1;k<=n;k++)
+       {
+
+            printf("* ", k);
+        }
+
+        o=o+1;;
+       l=l+1;
+        m=m-1;
+        n=n-1;
+        printf("\n");
+
+    }
+getch();
+
+
+}
+
