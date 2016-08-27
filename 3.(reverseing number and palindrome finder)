@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include<conio.h>
+
+int main()
+{
+    int num,a,rev_num;
+    rev_num=0;
+    printf("Enter a number to check it is palindrome number or not.\n");
+    scanf("%d",&num);
+    a=num;
+    while(num!=0)
+    {
+        rev_num=rev_num*10;//multiplying rev_num to 10
+        rev_num=rev_num+num%10;//the result of rev_num is added to the num integers's last digit
+        num=num/10;//here we eliminating the last digit of num
+    }
+    printf("Reverse number = %d\n",rev_num);
+    if(a==rev_num)  //if given number is equal to reverse number then executes
+        printf("%d number is a palindrome number.\n",a);
+    else
+        printf("%d number is not a palindrome number.",a);
+    getch();
+    return 0;
+}
+
+
+
+
