@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+   int a,b,c,d,e=1,f,g=1,h=1;
+   printf("Enter number of rows.(Enter less ther 13 to get sharp pattern):\n");
+   scanf("%d",&a);
+   d=a-1;
+   f=a-d;
+   for(b=1;b<=a;b++)
+   {
+       for(c=1;c<=d;c++)
+       {
+           printf(" ");
+       }
+     for(h=1;h<=f;h++)
+     {
+         if(b<=4)
+         printf("%d ",e);
+         else
+            printf("%d",e);
+         e++;
+     }
+       d=d-1;
+       f=f+1;
+
+       printf("\n");
+   }
+   getch();
+}
