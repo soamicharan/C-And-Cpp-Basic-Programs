@@ -1,0 +1,85 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+int main()
+{
+    long int a,c,d=1,e=1,f,g,n,i,j=1,k,m=0,o,p=0,q,u,v,w,l;
+    printf("Binomial Equation (x+a)^n.If Value of x is unknown, Press 1 or known Press 2\n");
+    scanf("%d",&u);
+    if(u==1){
+            printf("Enter value of 'a' and 'n' -\n");
+    scanf("%d %d",&a,&n);
+    for(c=1;c<=n;c++)
+    {
+        d=c*d;
+    }
+    for(g=1;g<=n;g++)
+    {
+        i=n-g;
+        for(f=1;f<=i;f++)
+        {
+            j=f*j;
+        }
+         e=g*e;
+         k=d/(j*e);
+         o=pow(a,g);
+         m=k*o;
+         if(a>=0)
+     {
+         if(g<n)
+         {
+             if(g==1)
+             printf("x^%d + ",n);
+              printf(" %dx^%d + ",m,n-g);
+         }
+         if(g==n-1)
+         {
+             printf("%d",m);
+         }
+     }
+         else
+     {
+             if(g<n)
+         {
+             if(g==1)
+             printf("x^%d+",n);
+              printf("(%dx^%d)+",m,n-g);
+         }
+         if(g==n-1)
+         {
+             printf("(%d)",m);
+         }
+     }
+         j=1;
+    }
+    }
+    if(u==2)
+    {
+         printf("Enter value of 'x' 'a' and 'n' -\n");
+    scanf("%d %d %d",&v,&a,&n);
+    for(c=1;c<=n;c++)
+    {
+        d=c*d;
+    }
+    for(g=1;g<=n;g++)
+    {
+        i=n-g;
+        for(f=1;f<=i;f++)
+        {
+            j=f*j;
+        }
+         e=g*e;
+         k=d/(j*e);
+         o=pow(a,g);
+         w=pow(v,n-g);
+         m=(k*o*w)+m;
+
+         j=1;
+    }
+    l=pow(v,n);
+    m=l+m;
+    printf("Answer = %d",m);
+    }
+
+    getch();
+}
