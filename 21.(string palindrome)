@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+char a[25];int b,c,d,e,f;
+printf("Enter a string.\n");
+scanf("%s",&a);
+b=strlen(a);
+c=b-1;e=0;
+for(d=c;d>=0;d--)
+{
+if(a[e]==a[d])
+f=1;
+else
+f=0;
+e++;
+}
+if(f==1)
+printf("string is palindrome.\n");
+else
+printf("string is not palindrome.\n");
+}
