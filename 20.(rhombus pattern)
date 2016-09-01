@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+int a,b,c,d,e;
+printf("Enter length and rows of rhombus.\n");
+scanf("%d%d",&a,&b);
+for(c=b;c>0;c--)
+{
+for(e=c-1;e>0;e--)
+printf(" ");
+
+for(d=1;d<=a;d++)
+printf("* ");
+
+printf("\n");
+}
+}
