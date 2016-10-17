@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<string.h>
+#include<conio.h>
+int main()
+{
+    int a,b,c,d=0,e=0,g;
+    char name[100][25],temp[25];
+    printf("Enter number of entries.\n");
+    scanf("%d",&a);
+    for(g=0;g<=a;g++)
+        gets(name[g]);
+    for(b=0;b<=a-1;b++)
+    {
+        for(c=0;c<=a-b-1;c++)
+        {
+            if(name[c][d]!=name[c+1][d]){
+            if(name[c][d]>name[c+1][d])
+            {
+                strcpy(temp,name[c]);
+                strcpy(name[c],name[c+1]);
+                strcpy(name[c+1],temp);
+            }
+            d=0;
+            }
+            else
+            {
+                d++;
+                c--;
+            }
+        }
+    }
+    printf("\nSorted Names.\n");
+    for(g=0;g<=a;g++)
+        puts(name[g]);
+    getch();
+}
