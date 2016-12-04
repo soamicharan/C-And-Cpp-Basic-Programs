@@ -1,11 +1,10 @@
 #include<stdio.h>
-int main()
+void fib(int a,int b,int n)
 {
-  long long int fl,a=0,b=1,i,j,k,y;
-  printf("Enter range of fibonacci series: ");
-  scanf("%llu",&y);
-  printf("0\n1\n");
-  for(fl=1;fl<=y;fl++)
+	long long int fl,i,j,k,y;
+  
+ 
+  for(fl=1;fl<=n;fl++)
   {
       i=a;           //i is intializing with a
       j=b;          //j is intializing with b
@@ -14,5 +13,12 @@ int main()
       a=b;       //now a i intialize with b
       b=k;      //b is initialize with k
   }
-  getch();
+}
+int main()
+{
+  long long int fl,a=0,b=1,i,j,k,y;
+  printf("Enter range of fibonacci series: ");
+  scanf("%llu",&y);
+  fib(0,1,y);
+ 
 }
